@@ -5,32 +5,33 @@ function Album(title, artist, genre) {
   self.genre = ko.observable(genre);
   self.editing = ko.observable(false);
          
-  self.edit = function() { self.editing(true) }
+  self.edit = function() { 
+    self.editing(true) }
 }
 
 function AlbumCollectionViewModel() {
-    var self = this;
-         
-    self.addAlbum = function() {
-        self.albums.push(new Album("", "", ""));
-    };
+  var self = this;
+       
+  self.addAlbum = function() {
+    self.albums.push(new Album("", "", ""));
+  };
+  
+  self.removeAlbum = function(album) { 
+    self.albums.remove(album) }
     
-    self.removeAlbum = function(album) { self.albums.remove(album) }
-
-    // Editable data
-    self.albums = ko.observableArray([
-        new Album("New York", "Lou Reed", "Rock"),
-        new Album("The Freewheelin’", "Bob Dylan", "Folk"),
-        new Album("Sinatra: New York", "Frank Sinatra", "Traditional Pop"),
-        new Album("The Blueprint 3", "Jay-Z", "Hip Hop"),
-        new Album("Kind of Blue", "Miles Davis", "Jazz"),
-        new Album("Paul's Boutique", "Beastie Boys", "Hip Hop"),
-        new Album("October Rust", "Type O Negative", "Doom Metal"),
-        new Album("This Is Me...Then", "Jennifer Lopez", "Pop"),
-        new Album("Sidewalks", "Matt and Kim", "Indie Pop"),
-        new Album("100 Days, 100 Nights", "Sharon Jones and the Dap-Kings", "Funk/Soul"),
-        new Album("High Violet", "The National", "Indie Rock")
-    ]);
+  self.albums = ko.observableArray([
+    new Album("New York", "Lou Reed", "Rock"),
+    new Album("The Freewheelin’", "Bob Dylan", "Folk"),
+    new Album("Sinatra: New York", "Frank Sinatra", "Traditional Pop"),
+    new Album("The Blueprint 3", "Jay-Z", "Hip Hop"),
+    new Album("Kind of Blue", "Miles Davis", "Jazz"),
+    new Album("Paul's Boutique", "Beastie Boys", "Hip Hop"),
+    new Album("October Rust", "Type O Negative", "Doom Metal"),
+    new Album("This Is Me...Then", "Jennifer Lopez", "Pop"),
+    new Album("Sidewalks", "Matt and Kim", "Indie Pop"),
+    new Album("100 Days, 100 Nights", "Sharon Jones and the Dap-Kings", "Funk/Soul"),
+    new Album("High Violet", "The National", "Indie Rock")
+  ]);
 }
 
 ko.applyBindings(new AlbumCollectionViewModel());
