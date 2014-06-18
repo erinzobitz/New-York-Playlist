@@ -1,13 +1,11 @@
 require.config({
     paths: {
-        album: 'album',
-        albumCollectionViewModel: 'albumCollectionViewModel',
-        knockOut: 'knockout-3.1.0'
+        knockout: 'knockout-3.1.0'
     }
 });
 
-require(['knockOut', 'albumCollectionViewModel'], function(ko, albumCollectionViewModel) {
-    ko.applyBindings(new albumCollectionViewModel());
+require(['knockout', 'AlbumCollectionViewModel'], function(ko, AlbumCollectionViewModel) {
+    ko.applyBindings(new AlbumCollectionViewModel());
 
 });
 

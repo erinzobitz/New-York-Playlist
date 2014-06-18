@@ -1,5 +1,6 @@
-define(['knockout-3.1.0'], function (ko) {
-    var Album = function Album(title, artist, genre) {
+define(function (require, exports, module) {
+    var ko = require("knockout");
+    module.exports = function Album(title, artist, genre) {
         var self = this;
         self.title = ko.observable(title);
         self.artist = ko.observable(artist);
@@ -9,5 +10,4 @@ define(['knockout-3.1.0'], function (ko) {
             self.editing(true);
         };
     };
-    return Album;
 });
