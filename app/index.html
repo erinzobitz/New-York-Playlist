@@ -13,11 +13,13 @@
     <body>
         <div class="container">
             <div class="header">
-                <h2 class="text-muted text-center">New York Playlist</h2>
+                <h2 class="text-center">New York Playlist</h2>
             </div>
             <br></br>
             <h4 class="inline">Your Albums (<span data-bind="text: albums().length"></span>)</h4>
-            <button type="button" class="btn inline btn-primary pull-right albumButton" data-bind="click: addAlbum">Add Albums</button>
+            <button type="button" class="btn inline btn-primary pull-right albumButton" data-bind="visible: editMode, click: addAlbum">Add Album</button>
+            <button type="button" class="btn inline btn-info pull-right albumButton" data-bind="visible: notEditing, click: editAlbum">Edit Albums</button> 
+            <button type="button" class="btn inline btn-info pull-right albumButton" data-bind="visible: editMode, click: doneEditing, 'if': editMode">Done Editing</button> 
             <br></br>
 
 
@@ -31,15 +33,30 @@
                     </tr>
                 </thead>
 
-                <tbody data-bind="foreach: albums">
-                  <tr>
-                    <td><input data-bind="value: title()" /></td>
-                    <td><input data-bind="value: artist()" /></td>
-                    <td><input data-bind="value: genre()" /></td>
-                    <td><a href="#" data-bind="click: $root.removeAlbum">Remove</a></td>
-                  </tr>
+                <tbody data-bind=" template:{name: 'editTemplate','if': editMode, foreach: albums}">
                 </tbody>
-            </table>    
+                <tbody data-bind="template: { name: 'albumsTemplate', ifnot: editMode, foreach: albums }">
+                </tbody>
+            </table>
+
+        <script id="albumsTemplate" type="text/template">
+          <tr>
+            <td data-bind="text: title()"></td>
+            <td data-bind="text: artist()"></td>
+            <td data-bind="text: genre()"></td>
+          </tr>              
+        </script>
+
+        <script id="editTemplate" type="text/template">
+          <tr>
+            <td><input data-bind="value: title()" /></td>
+            <td><input data-bind="value: artist()" /></td>
+            <td><input data-bind="value: genre()" /></td>
+            <td><a href="#" data-bind="click: $root.removeAlbum">Remove</a></td> 
+          </tr>              
+        </script>
+
+            
             
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script type='text/javascript' src='scripts/knockout-3.1.0.js'></script>

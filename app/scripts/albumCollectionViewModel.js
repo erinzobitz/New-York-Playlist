@@ -3,6 +3,8 @@ define(function (require, exports, module) {
     var Album = require("./Album");
     module.exports = function AlbumCollectionViewModel() {
         var self = this;
+        self.editMode = ko.observable(false);
+        self.notEditing = ko.observable(true);
 
         self.addAlbum = function () {
             self.albums.push(new Album("", "", ""))
@@ -25,5 +27,16 @@ define(function (require, exports, module) {
             new Album("100 Days, 100 Nights", "Sharon Jones and the Dap-Kings", "Funk/Soul"),
             new Album("High Violet", "The National", "Indie Rock")
         ]);
+        
+        self.editAlbum = function() {
+            self.editMode(true);
+            self.notEditing(false);
+        };
+
+        self.doneEditing = function() {
+            self.editMode(false);
+            self.notEditing(true);
+        };
+
     };
 });

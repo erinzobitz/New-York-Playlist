@@ -5,9 +5,5 @@ define(function (require, exports, module) {
         self.title = ko.observable(title);
         self.artist = ko.observable(artist);
         self.genre = ko.observable(genre);
-        self.editing = ko.observable(false);
-        self.edit = function () {
-            self.editing(true);
-        };
     };
 });
