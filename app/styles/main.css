@@ -9,7 +9,11 @@
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    background-image: url('../images/new_york_bridge.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -75,6 +79,6 @@ body {
 
 .albumButton {
     margin-top: -10px;
+    margin-left: 10px;
 }
-
 
