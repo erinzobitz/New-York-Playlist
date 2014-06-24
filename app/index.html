@@ -41,17 +41,17 @@
 
         <script id="albumsTemplate" type="text/template">
           <tr>
-            <td data-bind="text: title()"></td>
-            <td data-bind="text: artist()"></td>
-            <td data-bind="text: genre()"></td>
+            <td data-bind="text: title"></td>
+            <td data-bind="text: artist"></td>
+            <td data-bind="text: genre"></td>
           </tr>              
         </script>
 
         <script id="editTemplate" type="text/template">
           <tr>
-            <td><input data-bind="value: title()" /></td>
-            <td><input data-bind="value: artist()" /></td>
-            <td><input data-bind="value: genre()" /></td>
+            <td><input data-bind="value: title" /></td>
+            <td><input data-bind="value: artist" /></td>
+            <td><input data-bind="value: genre" /></td>
             <td><a href="#" data-bind="click: $root.removeAlbum">Remove</a></td> 
           </tr>              
         </script>
