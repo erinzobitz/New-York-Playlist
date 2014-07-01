@@ -17,9 +17,21 @@
             </div>
             <br></br>
             <h4 class="inline">Your Albums (<span data-bind="text: albums().length"></span>)</h4>
-            <button type="button" class="btn inline btn-primary pull-right albumButton" data-bind="visible: editMode, click: addAlbum">Add Album</button>
-            <button type="button" class="btn inline btn-info pull-right albumButton" data-bind="visible: notEditing, click: editAlbum">Edit Albums</button> 
-            <button type="button" class="btn inline btn-info pull-right albumButton" data-bind="visible: editMode, click: doneEditing, 'if': editMode">Done Editing</button> 
+            <button type="button" 
+                    class="btn inline btn-primary pull-right albumButton" 
+                    data-bind="visible: editMode, click: addAlbum">
+                    Add Album
+            </button>
+            <button type="button" 
+                    class="btn inline btn-info pull-right albumButton" 
+                    data-bind="visible: notEditing, click: editAlbum">
+                    Edit Albums
+            </button> 
+            <button type="button" 
+                    class="btn inline btn-info pull-right albumButton" 
+                    data-bind="visible: editMode, click: doneEditing, 'if': editMode">
+                    Done Editing
+            </button> 
             <br></br>
 
 
