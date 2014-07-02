@@ -1,6 +1,7 @@
 require.config({
     paths: {
-        knockout: 'knockout-3.1.0'
+        knockout: 'knockout-3.1.0',
+        AlbumCollectionViewModel: './app/AlbumCollectionViewModel'
     }
 });
 

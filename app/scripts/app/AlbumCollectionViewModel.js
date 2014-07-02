@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     var ko = require("knockout");
-    var Album = require("./Album");
+    var Album = require("./app/Album");
     module.exports = function AlbumCollectionViewModel() {
         var self = this;
         self.editMode = ko.observable(false);
