@@ -5,7 +5,7 @@ define(function (require, exports, module) {
         var self = this;
         self.editMode = ko.observable(false);
         self.notEditing = ko.computed(function() {
-          return (self.editMode() == false);
+            return (self.editMode() === false);
         });
 
         self.addAlbum = function () {
