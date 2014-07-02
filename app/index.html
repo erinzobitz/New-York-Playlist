@@ -24,12 +24,12 @@
             </button>
             <button type="button" 
                     class="btn inline btn-info pull-right albumButton" 
-                    data-bind="visible: notEditing, click: editAlbum">
+                    data-bind="visible: !editMode(), click: toggleEditMode">
                     Edit Albums
             </button> 
             <button type="button" 
                     class="btn inline btn-info pull-right albumButton" 
-                    data-bind="visible: editMode, click: doneEditing, 'if': editMode">
+                    data-bind="visible: editMode, click: toggleEditMode">
                     Done Editing
             </button> 
             <br></br>
