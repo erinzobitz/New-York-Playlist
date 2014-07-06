@@ -10,8 +10,29 @@
         <link rel="stylesheet" href="styles/main.css">
     </head>
 
+
     <body>
-        <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <a class="navbar-brand" href="#/home">Home</a>
+                <ul class="nav navbar-nav">
+                  <li><a href="#/about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container" id="about">
+            <br></br>
+            <br></br>
+            <p class="lead">
+                In the "City that Never Sleeps", the music shouldn't stop either. The New York Playlist was developed to keep you going in those moments when your subway has been crippled by snow or when you find yourself waiting in an hour line for a cronut or when the summer air feels like a smoothering blanket and you start to wonder, "why do I even live in New York?" Just cue up the New York Playlist to remind yourself why it's the greatest city on earth.
+                <br></br>
+                With albums dating back to 1950's New York, this playlist has been compiled to highlight the city's cultural breadth - its grit, wit, romance and skyscraper-size ambition. However, you wouldn't be New Yorkers if you didn't disagree with the selection, so go ahead and click "Edit Albums" to add to, edit and remove from this collection to achieve <p class=" lead italic">your</p> <p class="lead"> New York state of mind. 
+            </p>
+        </div>
+
+        <div class="container" id="home">
+            <br></br>
             <div class="header">
                 <h2 class="text-center">New York Playlist</h2>
             </div>
@@ -52,26 +73,28 @@
             </table>
 
         <script id="albumsTemplate" type="text/template">
-          <tr>
-            <td data-bind="text: title"></td>
-            <td data-bind="text: artist"></td>
-            <td data-bind="text: genre"></td>
-          </tr>              
+            <tr>
+                <td data-bind="text: title"></td>
+                <td data-bind="text: artist"></td>
+                <td data-bind="text: genre"></td>
+                <td></td>
+            </tr>              
         </script>
 
         <script id="editTemplate" type="text/template">
-          <tr>
-            <td><input data-bind="value: title" /></td>
-            <td><input data-bind="value: artist" /></td>
-            <td><input data-bind="value: genre" /></td>
-            <td><a href="#" data-bind="click: $root.removeAlbum">Remove</a></td> 
-          </tr>              
+            <tr>
+                <td><input data-bind="value: title" /></td>
+                <td><input data-bind="value: artist" /></td>
+                <td><input data-bind="value: genre" /></td>
+                <td><a href="#" data-bind="click: $root.removeAlbum">Remove</a></td> 
+            </tr>              
         </script>
 
             
             
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script type='text/javascript' src='scripts/knockout-3.1.0.js'></script>
+        <script type='text/javascript' src='scripts/director.min.js'></script>
         <script data-main="scripts/main" src="scripts/require.js"></script>
 
 
