@@ -10,3 +10,22 @@ require(['knockout', 'AlbumCollectionViewModel'], function(ko, AlbumCollectionVi
 
 });
 
+var about = function () { 
+  document.getElementById('about').style.display = 'block';
+  document.getElementById('home').style.display = 'none';
+};
+
+var home = function () { 
+  document.getElementById('about').style.display = 'none';
+  document.getElementById('home').style.display = 'block';
+};
+
+var routes = {
+    '/about': about,
+    '/home' : home
+};
+
+var router = Router(routes);
+
+router.init();
+
