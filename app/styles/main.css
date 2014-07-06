@@ -69,10 +69,6 @@ body {
 
 /* custom css */
 
-#editable {
-    visibility: hidden;
-}
-
 .inline {
     display: inline;
 }
@@ -80,5 +76,18 @@ body {
 .albumButton {
     margin-top: -10px;
     margin-left: 10px;
+}
+
+.about {
+    display: none;
+}
+
+.lead {
+    display: inline;
+}
+
+.italic {
+  font-style: italic;
+  display: inline;
 }
 
